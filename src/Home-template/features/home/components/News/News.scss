@@ -1,0 +1,57 @@
+@import "assets/styles/_Responsive";
+@import "App.scss";
+
+.news__container{
+    max-width:960px;
+    margin: 0 auto;
+
+    & > .news__header{
+        text-align: center;
+        font-size: 1.4rem;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+        @include xs{
+            font-size: 1rem;
+        }
+
+        & > .header__btn{
+            border: none;
+            margin-right: 30px;
+            color: #949494;
+            background-color: transparent;
+            transition: 0.2s all ease-in-out;
+
+            @include xs{
+                margin: 0;
+                &:hover{
+                    font-size: 1.1rem !important;
+                }
+            }
+        }
+        
+        & > .active{
+            color: $primary-color;
+            font-size: 1.6rem;
+            cursor: default;
+            
+            border: none;
+            background-color: transparent;
+            margin-right: 30px;
+            @include xs{
+                font-size: 1.2rem;
+                margin: 0;
+            }
+        }
+
+        & > .header__btn:hover{
+            font-size: 1.6rem;
+            transition: 0.2s all ease-in-out;
+        }
+    }
+
+    .mews__body{
+        margin-bottom: 50px;
+    }
+}

@@ -1,0 +1,169 @@
+@import "../../../assets/styles/Responsive";
+@import "../../../App.scss";
+
+.control__container{
+    display: flex;
+    width: 100%;
+    height: 91vh;
+    margin-top: 4%;
+    position: relative;
+    overflow: auto;
+
+    @include sm{
+        & .hideMenu{
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateX(-100%);
+            z-index: 50;
+            transition: 0.3s all;
+        }
+
+        & .showMenu{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 20;
+
+            background: white;
+            width: 250px;
+            transform: translateX(0);
+            transition: 0.3s all;
+        }
+     }
+
+    @include lg{
+        margin-top: 4%;
+    }
+
+    & .control__row{
+        min-width: 250px;
+        height: inherit;
+        position: relative;
+        border-right: 1px solid rgba($color: #000000, $alpha: 0.2);
+
+        & .control__show--icon{
+            position: absolute;
+            top: 25%;
+            right: 0;
+            transform: translateX(100%);
+
+            width: 40px;
+            fill: $primary-color;
+            z-index: 20;
+            cursor: pointer;
+            visibility:hidden;
+
+            @include sm{
+                visibility: visible;
+            }
+        }
+    }
+
+    & .control__info--content{
+        width: 100%;
+        padding-top:50px;
+
+        & .control__info--avatar{
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            & .MuiAvatar-root{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%; 
+                background-color: $primary-color;
+                margin-bottom: 5px
+            }
+
+            & p{
+                @include fontStyle(1rem, black );
+                font-weight: 600;
+                margin: 0;
+
+            }
+
+            & span{
+                @include fontStyle(0.8rem, black );
+
+            }
+        }
+    }
+
+    & .control__info--title{
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        padding-left: 10px;
+
+        & .control__title--icon{
+            width: 30px;
+            height: 30px;
+            fill: $primary-color;
+        }
+
+        & p{
+            @include fontStyle(1.4rem,$primary-color );
+            margin: 0;
+            margin-left: 10px;
+            font-weight: 600;
+
+            @include md{
+                font-size: 1.1rem;
+                margin-left: 4px;
+            }
+        }
+    }
+
+    & .control__info--item{
+        display: flex;
+        align-items: flex-start;
+        padding: 10px 0 10px 10px;
+        width: 100%;
+
+        & .control__item--icon{
+            width: 20px;
+            height: 20px;
+            margin-left: 4px;
+            fill: rgba(0, 0, 0, 0.6);
+        }
+
+        & p{
+            @include fontStyle(0.9rem, black );
+            margin: 4px 0;
+            margin-left: 10px;
+            width: 100%;
+            text-transform: none;
+            text-align: left;
+        }
+    }
+
+    & .control__active{
+        @extend .control__info--item;
+        background: $primary-color;
+
+        &:hover{
+            background-color: $primary-color;
+        }
+
+
+        & .control__item--icon{
+            width: 20px;
+            height: 20px;
+            margin-left: 4px;
+            fill: white;
+        }
+
+        & p{
+            @include fontStyle(0.9rem, white );
+            margin: 4px 0;
+            margin-left: 10px;
+            width: 100%;
+            text-transform: none;
+            text-align: left;
+        }
+    }
+}
+

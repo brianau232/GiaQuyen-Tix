@@ -1,0 +1,300 @@
+@import "assets/styles/_Responsive";
+@import "App.scss";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin fontStyle($font-size, $color) {
+    font-size: $font-size;
+    color: $color;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: normal;
+}
+
+.userProfileMain{
+    position: relative;
+    height: 100%;
+
+    & .userProfile__header{ 
+        background-color: rgba($color: white, $alpha: 0.9);
+        box-shadow: 0 0 15px rgba($color: #000000, $alpha: 0.5);
+        color: black; 
+        z-index: 100;
+        height: 60px;
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: auto;
+        width: 100%;
+
+        & .userProfile__header--content{
+            width: 80%;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+
+            @include xs {
+                width: 95%;
+            }
+
+            & .header__logo{
+                
+                & svg{
+                    width: 40px;
+                    fill: #F54748;
+                }
+
+                @include xs{
+                    font-size: 1.2rem;
+                }
+
+                &:hover{
+                    color: $primary-color !important;
+                    transition: 0.3s all;
+                }
+            }
+
+            & p{
+                margin: 0;
+                @include fontStyle(1.5rem, black );
+                padding: 10px 0;
+                letter-spacing: 2px;
+
+                @include xs{
+                    @include fontStyle(1.2rem,black )
+                }
+            }
+
+            & .header__icon{
+                background-color: inherit;
+                border: none;
+                color: black;
+                font-size: 1.5rem;
+                transition: 0.3s all ease-in-out;
+
+                &:hover{
+                    color: $primary-color;
+                    transition: 0.3s all ease-in-out;
+                }
+            }
+        }
+    }
+
+    & .userProfile__container{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        margin-top: 4%;
+        position: relative;
+
+        @include lg{
+            margin-top: 4%;
+        }
+
+        @include sm{
+            & .hide__menu{
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translateX(-100%);
+                z-index: 50;
+                transition: 0.3s all;
+            }
+    
+            & .show__menu{
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 50;
+
+                width: 250px;
+                transform: translateX(0);
+                transition: 0.3s all;
+            }
+         }
+    }
+
+    & .userProfile__info{
+        height: 100vh;
+        min-width: 250px;
+        background-color: white;
+        border-right: 1px solid rgba($color: #000000, $alpha: 0.2);
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;     
+
+        & .userProfile__row{
+            width: 100%;
+            position: relative;
+
+            & .show__icon{
+                position: absolute;
+                top: 25%;
+                right: 0;
+                transform: translateX(100%);
+
+                width: 40px;
+                fill: $primary-color;
+                z-index: 20;
+                cursor: pointer;
+                visibility:hidden;
+
+                @include sm{
+                    visibility: visible;
+                }
+            }
+        }
+
+        & .userProfile__info--content{
+            width: 100%;
+            padding-top:50px;
+
+            & .info__avatar{
+                padding: 15px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                & .MuiAvatar-root{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%; 
+                    background-color: $primary-color;
+                    margin-bottom: 5px
+                }
+
+                & p{
+                    @include fontStyle(1rem, black );
+                    font-weight: 600;
+                    margin: 0;
+
+                }
+
+                & span{
+                    @include fontStyle(0.8rem, black );
+
+                }
+            }
+        }
+
+        & .userProfile__info--title{
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-left: 10px;
+
+            & .title__icon{
+                width: 30px;
+                height: 30px;
+                fill: $primary-color;
+            }
+
+            & p{
+                @include fontStyle(1.4rem,$primary-color );
+                margin: 0;
+                margin-left: 10px;
+                font-weight: 600;
+
+                @include md{
+                    font-size: 1.1rem;
+                    margin-left: 4px;
+                }
+            }
+        }
+
+        & .UserProfile__info--item{
+            display: flex;
+            align-items: flex-start;
+            padding: 10px 0 10px 10px;
+            width: 100%;
+
+            & .item__icon{
+                width: 20px;
+                height: 20px;
+                margin-left: 4px;
+                fill: rgba(0, 0, 0, 0.6);
+            }
+
+            & p{
+                @include fontStyle(0.9rem, black );
+                margin: 4px 0;
+                margin-left: 10px;
+                width: 100%;
+                text-transform: none;
+                text-align: left;
+            }
+        }
+
+        & .active{
+            @extend .UserProfile__info--item;
+            background: $primary-color;
+
+            & .item__icon{
+                width: 20px;
+                height: 20px;
+                margin-left: 4px;
+                fill: white;
+            }
+
+            & p{
+                @include fontStyle(0.9rem, white );
+                margin: 4px 0;
+                margin-left: 10px;
+                width: 100%;
+                text-transform: none;
+                text-align: left;
+            }
+        }
+    }
+}
+
+.userProfile__left{
+    width: 100%;
+
+    @media (min-width:992px) {
+        display: none;
+    }
+    & ul{
+        border-radius: 5px;
+        box-shadow: 2px 3px 15px rgba($color: #000000, $alpha: 0.2);
+        list-style: none;
+        height: auto;
+        margin: 0;
+        
+
+        & .userProfile__left--item{
+            width: 100%;
+            display: flex;
+            padding: 15px 5px;
+
+            &:hover{
+                cursor: pointer;
+                background-color: rgba(#BCBABE,0.3);
+            }
+
+            & .left__icon{
+                width: 18px;
+                height: 18px;
+                fill: rgba(0, 0, 0, 0.6);
+                margin-right: 5px;
+            }
+
+            & p{
+                @include fontStyle(0.8rem, black);
+                margin: 5px 0;
+                width: 100%;
+
+               
+            }
+        }
+    }
+}

@@ -1,0 +1,175 @@
+@import "assets/styles/Responsive";
+@import "App.scss";
+
+.bookingProfile{
+    display: flex;
+    padding: 40px 30px;
+    width: 100%;
+    overflow: auto;
+
+    @include md{
+        padding: 40px 10px;
+    }
+
+    @include xs{
+        padding: 60px 10px 0;
+    }
+
+    & .bookingProfile--container{    
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 2px 3px 15px rgba($color: #000000, $alpha: 0.2);
+
+
+        & .bookingProfile--title{
+            width: 100%;
+            padding: 15px;
+            border-bottom: 1px solid rgba(#BCBABE, 0.3);
+
+            & p{
+                @include fontStyle(1.3rem, black );
+                margin: 0;
+            }
+        }
+
+        & .bookingProfile--row{
+            padding: 0 15px;
+            height: 500px;
+            overflow: auto;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+              }
+        
+            &::-webkit-scrollbar-thumb {
+                background: rgba(black, 0.3); 
+                border-radius: 10px;
+              }
+
+            @include md{
+                padding: 15px 0;
+            }
+
+            @include xs{
+                padding: 0;
+            }
+            
+            & .table{
+                border: 1px solid rgba(#BCBABE, 0.5);
+                position: relative;
+                border-collapse: collapse; 
+
+                & .thead{
+                    color: white;
+                    background: $primary-color;
+                    position: sticky;
+                    top: 0;
+                    width: 100%;
+
+                    & tr{
+
+                        & th{
+                            padding: 15px 5px;
+                            font-size: 1rem;
+
+                            @include md{
+                                font-size: 0.8rem;
+                            }
+
+                            @include xs{
+                                padding: 15px 0px;
+                                font-size: 0.7rem;
+                            }
+                        }
+    
+                        & th:nth-child(2){
+                            width: 70px;
+                        }
+
+                        & th:nth-child(4){
+                            width: 70px;
+
+                        }
+
+                        & th:nth-child(5){
+                            width: 65px;
+
+                            @include md{
+                                width: 50px;
+                            }
+
+                            @include xs{
+                                display: none;
+                            }
+                        }
+
+                        & th:nth-child(6){
+                            max-width: 150px;
+
+                        }
+                        & th:last-child{
+                            width: 100px;
+
+                            @include md{
+                                display: none;
+                            }
+                        }
+                    }   
+                    
+                }
+
+                & tbody{
+                    & tr{
+                        font-size: 0.9rem !important;
+
+                        & td{
+                            border: 1px solid rgba($color: #000000, $alpha: 0.1);
+
+                            @include sm{
+                                padding: 10px 3px;
+                            }
+                            @include xs{
+                                font-size: 0.7rem;
+                                padding: 4px 0;
+                            }
+                        }
+
+                        & td:first-child{
+                            @include md{
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                max-width: 100px;
+                            }
+
+                        }
+                        & td:nth-child(3){
+                           
+                            @include md{
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                max-width: 100px;
+                            }
+                        }
+
+                        & td:nth-child(5){
+                            @include xs{
+                                display: none;
+                            }
+                        }
+
+                        & td:last-child{
+                            @include md{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+        
+    }
+}

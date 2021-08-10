@@ -1,0 +1,105 @@
+@import "assets/styles/_Responsive";
+@import "App.scss";
+
+ .userProfile{
+     width: 100%;
+     height: 100%;
+     
+ }   
+ .userProfile__body{
+    width: 100%;
+    
+    & .userProfile__body--container{
+        padding: 20px 15px;
+        display: flex;
+        width: 100%;
+
+        & .body__left{
+            width: 25%;
+            margin-top: 3%;
+            @include md{
+                display: none;
+            }
+
+            @include lg{
+                max-width: 40% !important;
+            }
+        
+            & ul{
+                border-radius: 5px;
+                box-shadow: 2px 3px 15px rgba($color: #000000, $alpha: 0.2);
+                list-style: none;
+                height: 200px;
+                
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+
+                & .body__left--item{
+                    display: flex;
+                    padding: 15px 15px;
+
+                    &:hover{
+                        cursor: pointer;
+                        background-color: rgba(#BCBABE,0.3);
+                    }
+
+                    & .left__icon{
+                        width: 18px;
+                        height: 18px;
+                        fill: rgba(0, 0, 0, 0.6);
+                        margin-right: 10px;
+                    }
+
+                    & p{
+                        @include fontStyle(0.8rem, black);
+                        margin: 5px 0;
+                    }
+                }
+
+                & .isActive{
+                  @extend .body__left--item;
+                  background-color: $primary-color;
+
+                    &:hover{
+                        cursor: pointer;
+                        background-color: $primary-color;
+                    }
+                   
+                    & .left__icon{
+                        width: 18px;
+                        height: 18px;
+                        fill: white;
+                        margin-right: 10px;
+                    }
+
+                    & p{
+                        @include fontStyle(0.8rem, white);
+                        margin: 5px 0;
+                    }
+                }
+            }
+        }
+
+        & .body__main{
+            max-width: 100%;
+
+            @include md{
+               display: none;
+            }
+
+        }
+
+        & .body__main--md{
+            display: none;
+
+            @include md{
+                display: block;
+            }
+
+            @include xs{
+                padding-right: 0;
+            }
+        }
+    }
+}

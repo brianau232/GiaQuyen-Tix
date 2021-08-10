@@ -1,0 +1,146 @@
+@import "assets/styles/_Responsive";
+@import "App.scss";
+
+.ChangeProfile{
+    display: flex;
+    padding: 0 0 0 10px; 
+    max-width: 100%;
+    margin-top: 4%;
+
+    @include lg{
+        max-width: 100%;
+        margin-left: auto;
+        margin-top: 4%;
+    }
+
+    @include md{
+        margin-top: 6%;
+    }
+
+    @include sm{
+        padding-top: 5%;
+    }
+
+    @include xs{
+        width: 576px;
+        padding-top: 20%;
+    }
+    
+
+    & .ChangeProfile--container{    
+        border-radius: 5px;
+        box-shadow: 2px 3px 15px rgba($color: #000000, $alpha: 0.2);
+        @include xs{
+            width: 100%;
+        }
+
+        & .ChangeProfile--title{
+            
+            padding: 10px 15px;
+            border-bottom: 1px solid rgba(#BCBABE, 0.3);
+
+            & p{
+                @include fontStyle(1.3rem, black );
+                margin: 0;
+            }
+        }
+
+        & .ChangeProfile--row{
+            display: flex;
+            align-items: center;
+
+            & .ChangeProfile--content{
+                width: 50%;
+                padding: 0 10px;
+
+                @include xs{
+                    width: 100%;
+                  }
+               
+                & ul{
+                    width: 100%;
+                    list-style: none;
+                    padding: 20px 10px;
+
+                    & .content__item{
+                        width: 100%;
+                        margin-bottom: 10px;
+                    }
+
+                    & .MuiFormControl-root{
+                        width: 100%;
+
+                        & .MuiFormLabel-root{
+                            font-size: 0.8rem !important;
+                        }
+
+                        & .Mui-disabled{
+                            background: rgba(#B2B1B9, 1);
+                            color: rgba(black, 0.2) !important;
+                        }
+                    }
+
+                    & .form-control{
+                        border: 1px solid rgba($color: #000000, $alpha: 0.3);
+                        border-radius: 4px;
+                    }
+
+                }
+
+                & .changebtn{
+                    padding: 20px 10px;
+                    width: 100%;
+    
+                    & button{
+                        font-weight: 600;
+                        margin: 0;
+                        width: 100%;
+                        color: white;
+                        background: $primary-color;
+                        border: none;
+                        transition: 0.3s all;
+
+                        &:hover{
+                            margin: 0;
+                            opacity: 0.8;
+                            border: none;
+                            transition: 0.3s all;
+                        }
+                    }
+
+                    & .Mui-disabled{
+                        background: rgba($color: #000000, $alpha: 0.5) !important;
+                    }
+                    
+                }
+            }
+
+            & .ChangeProfile--warning{
+                width: 50%;
+                margin: auto;
+
+                @include xs{
+                    display: none;
+                }
+
+                & ul{
+                    margin-left: 20px;
+
+                    & li{
+                        color: $primary-color;
+                    }
+                }
+                & .warning__text{
+                    padding: 10px;
+                    
+                    & p{
+                        @include fontStyle(0.8rem, $primary-color);
+                        margin-bottom: 4px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+

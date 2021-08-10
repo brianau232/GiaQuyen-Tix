@@ -1,0 +1,65 @@
+@import 'assets//styles/Responsive';
+@import "App.scss";
+
+.booking{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .booking__listChair{
+        width: 75%;
+
+        @include sm{
+            width: 100%;         
+        }
+
+        @include xs{
+            overflow-y: auto;
+        }
+
+        &--body{
+            display: flex;
+            width: 100%;
+            margin-top: 80px;
+
+            & > .body__blank{
+                width: 6%;
+                background: rgba(0,0,0,0.7);
+
+                @include md{
+                    display: none;
+                }
+            }
+        }
+    }  
+}
+
+.MuiFormControl-root{
+    display: flex !important;
+
+    & .MuiInput-underline::before, .MuiInput-underline::after{
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+}
+
+.swal-footer{
+    text-align: center;
+}
+
+.swal-button-container{
+    
+    & .swal-button--confirm{
+        color: white;
+        background: $primary-color;
+
+        &:hover{
+            color: white;
+            background: rgba($primary-color, 0.8);
+        }
+    }
+
+    & .swal-button--cancel{
+        color: white;
+    }
+}

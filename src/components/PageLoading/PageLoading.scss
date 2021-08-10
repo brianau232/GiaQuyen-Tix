@@ -1,0 +1,14 @@
+@import 'assets/styles/Responsive';
+
+.pageLoading{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    &.iconLoading{
+        @include md {
+            size: 5;
+        }
+    }
+}

@@ -1,0 +1,71 @@
+@import "../../../assets/styles/Responsive";
+@import "../../../App.scss";
+
+
+ .admin__header{ 
+        background-color: rgba($color: white, $alpha: 0.9);
+        box-shadow: 0 0 15px rgba($color: #000000, $alpha: 0.5);
+        color: black; 
+        z-index: 100;
+        height: 60px;
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: auto;
+        width: 100%;
+
+        & .admin__header--content{
+            width: 80%;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+
+            @include xs {
+                width: 95%;
+            }
+
+            & .admin__header--logo{
+                
+                & svg{
+                    width: 40px;
+                    fill: $primary-color;
+                }
+
+                @include xs{
+                    font-size: 1.2rem;
+                }
+
+                &:hover{
+                    color: #F54748 !important;
+                    transition: 0.3s all;
+                }
+            }
+
+            & p{
+                margin: 0;
+                @include fontStyle(1.5rem, black );
+                padding: 10px 0;
+                letter-spacing: 2px;
+
+                @include xs{
+                    @include fontStyle(1.2rem,black )
+                }
+            }
+
+            & .admin__header--icon{
+                background-color: inherit;
+                border: none;
+                color: black;
+                font-size: 1.5rem;
+                transition: 0.3s all ease-in-out;
+
+                &:hover{
+                    color: #F54748;
+                    transition: 0.3s all ease-in-out;
+                }
+            }
+        }
+}

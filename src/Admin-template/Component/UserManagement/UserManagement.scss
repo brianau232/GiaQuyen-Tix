@@ -1,0 +1,28 @@
+@import "../../../assets/styles/Responsive";
+@import "../../../App.scss";
+
+
+.userManagement{
+    margin-top: 50px;
+    width: 80%;
+
+    @include sm{
+      width: 100%;
+      position: absolute;
+      left: 0;
+    }
+}
+
+.swal-footer{
+    text-align: center;
+}
+
+::-webkit-scrollbar {
+    width: 5px !important;  
+  }
+::-webkit-scrollbar-thumb {
+    background: rgba($color: #000000, $alpha: 0.3) !important; 
+    border-radius: 10px;
+  }
+
+

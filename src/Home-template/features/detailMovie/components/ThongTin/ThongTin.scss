@@ -1,0 +1,70 @@
+@import 'assets//styles/Responsive';
+@import "App.scss";
+
+
+.infoContainer{
+    padding: 30px 0 60px;
+
+    & > .infoRow{
+        width: 90%;
+        margin: auto;
+
+
+    & > .info{
+        max-width: 870px;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+
+        @include sm{
+            display: flex;
+            flex-direction: column;
+        }
+
+
+
+        & > .info__left{
+            padding: 5px;
+            width: 100%;
+
+            & > ul{
+                padding: 0;
+                margin: 0;
+                list-style: none;
+
+                & > li{
+                    display: flex;
+
+                    & > p{
+                        width: 35%;
+                        color: white;
+                        font-size: 0.9rem;
+                        font-weight: 400;
+                        line-height: 1.5;
+                        margin-bottom: 15px;
+
+                        @include sm{
+                            width: 50% !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        & > .info__right{
+            padding: 5px;
+            width: 100%;
+
+            & > p:first-child{
+                font-size: 1rem;
+                color: $primary-color;
+            }
+
+            & > p{
+                @include fontStyle(0.9rem, white);
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+}

@@ -1,0 +1,174 @@
+@import "assets/styles/Responsive";
+@import "App.scss";
+
+.addUserBox{
+    width: 80%;
+
+    @include sm{
+        width: 100%;
+        position: absolute;
+        left: 0;
+      }
+
+    .addUser{
+        display: flex;
+        padding: 0 0 0 10px; 
+        max-width: 100%;
+        margin-top: 4%;
+    
+        @include lg{
+            width: 100%;
+            margin-left: auto;
+            margin-top: 4%;
+        }
+    
+        @include md{
+            margin-top: 6%;
+        }
+    
+        @include sm{
+            padding-top: 5%;
+        }
+    
+        @include xs{
+            width: 576px;
+            padding-top: 20%;
+        }
+        
+    
+        & .addUser__container{  
+            width: 95%;  
+            border-radius: 5px;
+            box-shadow: 2px 3px 15px rgba($color: #000000, $alpha: 0.2);
+            @include xs{
+                width: 100%;
+            }
+    
+            & .addUser__title{
+                
+                padding: 10px 15px;
+                border-bottom: 1px solid rgba(#BCBABE, 0.3);
+    
+                & p{
+                    @include fontStyle(1.3rem, black );
+                    margin: 0;
+                }
+            }
+    
+            & .addUser__row{
+                display: flex;
+                align-items: center;
+    
+                & .addUser__content{
+                    width: 40%;
+                    padding: 0 10px;
+    
+                    @include xs{
+                        width: 100%;
+                      }
+                   
+                    & ul{
+                        width: 100%;
+                        list-style: none;
+                        padding: 20px 10px;
+    
+                        & .addUser__content--item{
+                            width: 100%;
+                            margin-bottom: 10px;
+
+                            & input{
+                                height: 40px;
+                            }
+                            & select{
+                                padding: 8px;
+                                width: 100%;
+                                height: 40px;
+                                border: 1px solid rgba($color: #000000, $alpha: 0.3);
+                            }
+                            & .addUser__mes{
+                                color: $primary-color;
+                                font-size: 0.7rem;
+                            }
+                        }
+    
+                        & .MuiFormControl-root{
+                            width: 100%;
+    
+                            & .MuiFormLabel-root{
+                                font-size: 0.8rem !important;
+                            }
+    
+                            & .Mui-disabled{
+                                background: rgba(#B2B1B9, 1);
+                                color: rgba(black, 0.2) !important;
+                            }
+                        }
+    
+                        & .form-control{
+                            border: 1px solid rgba($color: #000000, $alpha: 0.3);
+                            border-radius: 4px;
+                        }
+    
+                    }
+    
+                    & .addUser__changebtn{
+                        padding: 20px 10px;
+                        width: 100%;
+        
+                        & button{
+                            font-weight: 600;
+                            margin: 0;
+                            width: 100%;
+                            color: white;
+                            background: $primary-color;
+                            border: none;
+                            transition: 0.3s all;
+    
+                            &:hover{
+                                margin: 0;
+                                opacity: 0.8;
+                                border: none;
+                                transition: 0.3s all;
+                            }
+                        }
+    
+                        & .Mui-disabled{
+                            background: rgba($color: #000000, $alpha: 0.5) !important;
+                        }
+                        
+                    }
+                }
+    
+                & .addUser__warning{
+                    width: 60%;
+                    margin: auto;
+    
+                    @include xs{
+                        display: none;
+                    }
+    
+                    & ul{
+                       
+    
+                        & li{
+                            text-align: left;
+                            color: $primary-color;
+                        }
+                    }
+                    & .addUser__warning--text{
+                        padding: 10px;
+
+                        & > .warning{
+                            padding-left: 20px;
+                        }
+                        
+                        & p{
+                            @include fontStyle(0.8rem, $primary-color);
+                            margin-bottom: 4px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,91 @@
+@import "assets/styles/_Responsive";
+@import "App.scss";
+
+.mobile{
+    background-image: url(../../../../../assets/images/backapp.jpg);
+    background-size: contain;
+    width: 100%;
+    padding: 120px 0 80px 0;
+
+    &__container{
+        max-width: 940px;
+        margin: 0 13%;
+
+        @include md{
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+    
+    &__left{
+        padding-top: 60px;
+    }
+
+    &__left--text{
+        color: #fff;
+        font-size: xx-large;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    &__left--textSmall{
+        color: #fff;
+        font-size: medium;
+    }
+
+    &__left--button,
+    &__left--button:hover{
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+
+        background-color: $primary-color;
+        color: #fff;
+        font-weight: 700;
+        font-size: medium;
+    }
+
+    &__left--textApp{
+        color: #fff;
+        padding-top: 20px;
+
+        & a{
+            margin: 0 0.2rem;
+            color: #fff;
+            border-bottom: 1px solid #fff;
+            text-decoration: none;
+        }
+    }
+
+    &__right{
+        position: relative;
+        padding: 0;
+        margin: auto;
+
+
+        &--img{
+            padding: 0 28%;
+            width: 100%;
+            height: auto;
+            border-radius: 30px;
+        }
+
+        &--slider{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5% 29.3% 0 29.3%;
+
+            & .carousel{
+                margin: 0;
+            }
+        }
+    }
+
+    &__slider--img{
+        border-radius: 20px;
+    }
+}
+

@@ -1,0 +1,265 @@
+@import 'assets//styles/Responsive';
+@import "App.scss";
+
+.schedule__container{
+    padding-bottom: 60px;
+}
+
+.schedule{
+   
+    &__body{
+        max-width: 870px;
+        margin: 0 auto;
+        display: flex;
+        background-color: white;
+        min-height: 700px;
+        border-radius: 10px !important;
+
+        @include sm{
+            width: 90%;
+        }
+        
+        @include md {
+            width: 90%;
+        }
+
+        & .schedule__listLogo{
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ebebec;
+            width: 300px;
+    
+            @include md{
+                max-width: 185px;
+            }
+    
+            @include sm{
+                width: 70px;
+            }
+    
+            @include xs{
+                width: 60px;
+            }
+    
+            & .active{
+                opacity: 1;
+            }
+    
+            &--button{
+                border: none;
+                border-bottom: 1px solid #ebebec;
+                cursor: pointer;
+                padding: 15px 0;
+    
+                background-color: white;
+                display: flex;
+                align-items: center;
+                opacity: 0.5;
+                transition: 0.3s all;
+    
+                &:hover{
+                    opacity: 1;
+                    transition: 0.3s all;
+                }
+                
+                @include md{
+                   padding: 15px 10px 15px;
+                }
+    
+                & > img{
+                    width: 50px;
+                    height: 50px;
+                    margin: 0 20px;
+    
+                    @include sm{
+                        margin: 0;
+                    }
+    
+                    @include md{
+                        width: 50px;
+                        height: 50px;
+                        margin: 0 5px 0 0;
+                    }
+    
+                    @include xs{
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+                & > p{
+                    font-weight: 400;
+                    margin: 0;
+    
+                    @include md{
+                        text-align: left;
+                        font-size: 0.8rem;
+                    }
+    
+                    @include sm{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    
+
+
+        &__listMovie{
+            display: inline-flex;
+            flex-direction: column;
+            border: 1px solid #ebebec;
+            overflow-y: scroll;
+            width: 80%;
+
+            @include sm{
+                width: 100%;
+            }
+
+            & .listMovie__container{
+                display: inline-flex;
+            }
+
+            & .listMovie__item{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 20px 0 20px;
+
+                & > img{
+                    width: 50px;
+                    border-radius: 4px;
+                    @include md{
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+
+                & .listMovie__content{
+                    margin-left: 10px;
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+
+                    & .movieName{
+                        display: flex;
+                        
+                        & .name{
+                            padding: 0;
+                            font-size: 1rem;
+                            font-weight: 600;
+
+                            @include xs{
+                                font-size: 0.6rem;
+                            }
+                        }
+                    
+                    }
+
+                    & > span{
+                        color: #9b9b9b;
+                        font-size: 0.9rem;
+                        font-family: "sfTextRegular";
+                        font-weight: 400;
+                        line-height: 1.42857143;
+                        letter-spacing: normal;
+                        
+                        @include xs{
+                            font-size: 0.6rem;
+
+                        }
+                    }
+                }
+            }
+
+            & .listMovie__schedule{
+                max-width: 600px;
+                padding: 10px 0px 20px;
+
+                & > p{
+                    font-weight: 600;
+                    font-size: 1rem;
+                }
+
+                & .scheduleList{
+                    
+                    
+                    & > .schedule{
+                        display: flex;
+                        flex-flow: row wrap;
+                        
+                    }
+                }
+
+                & .schedule__item{
+                    margin: 0 10px 10px 0;
+                    padding: 5px 10px;
+                    display: inline-block;
+                    border: 1px solid rgba(#9b9b9b, 0.4);
+                    cursor: pointer;
+                    
+
+                    &:hover .schedule__item--btn{
+                        color: $primary-color;
+                        transition: 0.3s all;
+                    }
+                    
+                    & > .schedule__item--btn{
+                        color: #7C83FD;
+                        border: none;
+                        background-color: white;
+                        font-weight: 600;
+                        font-size: 1rem;
+                        font-family: "sfMedium";
+                        transition: 0.3s all;
+
+                        @include md{
+                            font-size: 0.9rem;
+                        }
+
+                        @include xs{
+                            font-size: 0.6rem;
+                        }
+                    }
+
+
+                    @include md{
+                        padding: 6px 3px;
+                        margin: 0 5px 10px 0;
+                    }
+
+                    @include sm{
+                        margin: 0 5px 5px 0;
+                    }
+
+                    @include xs{
+                        margin: 0 0px 10px 0;
+                    }
+
+                    & > img{
+                        width: 20px;
+                        margin-right: 5px;
+
+                        @include xs{
+                            margin-right: 3px;
+                        }
+                    }
+            
+                }
+                
+                }
+            }
+        }
+
+        .MuiAccordionSummary-root{
+            height: 80px;
+        }
+
+        .MuiPaper-elevation1{
+            box-shadow: 0px 2px 1px -1px rgba(black,0.05), 0px 1px 1px 0px rgba(black,0.05), 0px 1px 3px 0px rgba(black,0.05) !important;
+        }
+
+        .MuiAccordionDetails-root{
+            padding: 8px 10px 16px !important;
+        }

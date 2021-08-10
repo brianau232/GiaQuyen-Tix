@@ -1,0 +1,53 @@
+@import 'assets/styles/Responsive';
+@import "App.scss";
+
+
+button:focus{
+    outline: none;
+}
+
+.carousel-control-next-icon{
+    background-image: url(../../../../../assets/images/next-session.png)!important;
+    width: 50px;
+    height: 50px;
+}
+
+.carousel-control-prev-icon{
+    background-image: url(../../../../../assets/images/back-session.png)!important;
+    width: 50px;
+    height: 50px;
+}
+
+.carousel-indicators{
+    bottom: 40px;
+}
+
+.carousel-indicators li{
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+}
+
+.carousel-indicators .active{
+    background-color: $primary-color;
+}
+
+
+
+.carousel{
+    width: 100%;
+    margin: 60px auto 0;
+    &__item{
+        position: relative;
+    }
+    
+
+    &__item:hover .playVideo, .playVideo > button {
+        opacity: 1;
+        transition: all 0.35s ease-out;
+    }
+
+    @include xs{
+        display: none;
+    }
+}

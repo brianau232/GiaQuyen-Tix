@@ -1,0 +1,401 @@
+@import 'assets/styles/Responsive';
+@import "App.scss";
+
+.body__main{
+    width: 100%;
+    background: white;
+
+    & > .body__container{
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 20px;
+
+
+        & > .body__content{
+            
+
+            & > .body__content--header{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 20px;
+
+               
+
+                & > .header__left{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    & > img{
+                        width: 48px;
+                        margin-right: 10px;
+
+                        @include xs {
+                            width: 30px;
+                        }
+                    }
+
+                    & > .heaer__left--theater{
+                        display: flex;
+                        flex-flow: column wrap;
+
+                        & > p{
+                            @include fontStyle(1rem,#333);
+                            margin: 0;
+
+                            @include xs {
+                               font-size: 0.8rem;
+                            }
+                            
+                            & > span{
+                                color: #9b9b9b;
+                                font-size: 1rem;
+
+                                @include xs {
+                                    font-size: 0.8rem;
+                                 }
+                            }
+                        }
+                    }
+                }
+
+                & > .header__right{
+                    
+                    & > span{
+                        @include fontStyle(0.7rem, #9b9b9b );
+                        text-align: center;
+                        line-height: 0;
+                        margin-bottom:5px;
+                    }
+
+                    & > .right__timeout{
+                        @include fontStyle(1.8rem, $primary-color);
+                        text-align: center;
+                        line-height: 1;
+                        margin: 0;
+                    }
+                }
+            }
+
+            & > .body__content--main{
+                width: 100%;
+                margin: 0 auto;
+
+                & > .body__screen{
+                    width: 100%;
+                    margin: 0 auto;
+                    height: 20px;
+                    text-align: center;
+                    
+                    font-size: 1rem;
+                    color: white;
+                    background: black;
+                    box-shadow: 0 6px 10px 2px rgba(0,0,0,0.9);
+
+                    @media (min-width: 992px) {
+                        width: 80%;
+                    }
+
+                }
+
+                & > .body__listChair{
+                    margin-top: 90px;
+                    &> .body__listChair--container{
+                        width: 500px;
+                        margin: 0 auto;
+
+                        @include xs{
+                            max-width: 250px;
+                        }
+
+                        @include sm{
+                            width: 500px;
+                        }
+
+                        & > .body__listChair--item{
+                            display: flex;
+                            flex-flow: row wrap;
+                            justify-content: center;
+
+                            & > .item__chair{
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                & > .item__chair--seat{
+                                    color: #3e515d;
+                                    cursor: pointer;
+                                    margin: 0 8px;
+                                    display: flex;
+
+                                    z-index: 0;
+                                    padding: 0;
+                                    margin-bottom: 8px;
+                                    position: relative;
+
+                                    @include xs{
+                                        margin: 0;
+                                    }
+
+                                    & > svg{
+                                        width: 32px;
+                                        height: 32px;
+
+                                        @include xs{
+                                            width: 25px;
+                                            height: 25px;
+                                        }
+                                    }
+
+                                    & > p{
+                                        position: absolute;
+                                        top: 9%;
+                                        left: 50%;
+                                        transform: translate(-50%);
+
+                                        width: 23px;                                                    
+                                        height: 10px;
+                                        border-radius: 50%;
+                                        font-size: 0.6rem;
+
+                                        background: #3e515d;
+                                        text-align: center;
+
+                                        @include xs{
+                                            width: 18px;
+                                            height: 10px;
+                                        }
+                                    }
+                                }  
+                                
+                                & > .soutOut{
+                                    @extend .item__chair--seat;
+                                    color: #CFD3CE !important;
+                                    pointer-events: none;
+
+                                    & > p{
+                                        @extend p;
+                                        background: #CFD3CE !important;
+                                    }
+                                }
+
+                                & > .vip{
+                                    @extend .item__chair--seat;
+                                    color: #F9B208;
+
+                                    & > p{
+                                        @extend p;
+                                        background: #F9B208;
+                                    }
+                                }
+
+                                & > .selected{
+                                    @extend .item__chair--seat;
+                                    color: #54E346 !important;
+
+                                    & > p{
+                                        @extend p;
+                                        background: #54E346 !important;
+                                        color: white;
+                                    }
+                                }
+                            }   
+                        }
+                    }
+                }
+
+                & > .body__footer{
+                    width: 80%;
+                    margin: 0 auto;
+                    margin-top: 60px;
+                    padding-bottom: 20px;
+
+                    display: flex;
+                    justify-content: center;
+                    justify-content: space-around;
+
+                    & > .body__footer--normal{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        position: relative;
+
+                        & > .normal__chair{
+                            color: #3e515d;
+                            cursor: pointer;
+                            display: flex;
+                            position: relative;
+
+                            & > svg{
+                                width: 30px;
+                                height: 30px;
+                            }
+                            & > .chair, .chair__selected{
+                                position: absolute;
+                                top: 9%;
+                                left: 51%;
+                                transform: translate(-50%);
+
+                                width: 22px;                                                    
+                                height: 10px;
+                                border-radius: 50%;
+                                font-size: 0.6rem;
+                                background: #3e515d;
+                                
+                            }
+                        }
+
+                        & > .body__footer--text{
+                            @include fontStyle(0.8rem, #9b9b9b);
+
+                            @include xs{
+                                font-size: 0.6rem
+                            }
+                        }
+                    }
+
+                    & > .body__footer--vip{
+                        @extend  .body__footer--normal;
+
+                        & > .vip__chair{
+                            @extend .normal__chair;
+                            color: #F9B208 !important;
+
+                            & > p{
+                                @extend .chair;
+                                background: #F9B208 !important;
+                            }
+                        }
+                    }
+
+                    & > .body__footer--selected{
+                        @extend .body__footer--normal;
+
+                        & > .selected__chair{
+                            @extend .normal__chair;
+                            color: #54E346 !important;
+
+                            & > svg{
+                                width: 30px;
+                                height: 30px;
+                            }
+
+                            &  p{
+                                @extend .chair;
+                                background: #54E346 !important;
+                            }
+                        }
+                    }
+
+                    & > .body__footer--solddOut{
+                        @extend .body__footer--normal;
+
+                        & > .soldOut__chair{
+                            @extend .normal__chair;
+                            color: #CFD3CE !important;
+
+                            & > svg{
+                                width: 30px;
+                                height: 30px;
+                            }
+
+                            & > p{
+                                @extend .chair;
+                                background: #CFD3CE !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & .body__continue{
+        display: none;
+
+        @include sm{
+            display: block;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        & .body__continue--bookingChair{
+            width: 50%;
+            height: 60px;
+            text-align: center;
+            padding-top: 20px;
+            background-color: rgba(#B2B1B9, 0.6);
+
+            @include xs{
+                padding-top: 15px;
+            }
+
+            & p{
+                color: $primary-color;
+                font-size: 1.1rem;
+                font-weight: 400;
+                margin: 0;
+
+                @include xs{
+                    font-size: 0.8rem;
+                }
+            }
+
+            & span{
+                font-size: 1.1rem;
+                font-weight: 600;
+
+                @include xs{
+                    font-size: 0.8rem;
+                }
+            }
+        }
+
+        & .body__continue--button{
+            width: 50%;
+            height: 60px;
+            text-align: center;
+
+            & button{
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                font-size: 1.5rem;
+
+                color: white;
+                border: none;
+                background: linear-gradient(to right, #43e97b, #38f9d7);
+
+                @include xs{
+                    font-size: 1.3rem;
+                }
+            }
+
+            & .btnDisabled{
+                @extend button;
+                background: #afafaf !important;
+            }
+        }
+    }
+}
+
+.swal-modal{
+
+    & .swal-title{
+        font-size: 2rem;
+    }
+
+    & .swal-text{
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    & .swal-footer{
+
+        & .swal-button{
+            background-color: $primary-color;
+        }
+    }
+}

@@ -1,0 +1,148 @@
+@import "../../../../../assets/styles/Responsive";
+
+$primary-color: #fb4226;
+
+.search{
+    padding-top: 40px;
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    display: none;
+
+    @include sm{
+        display: block;
+        width: 80%;
+    }
+
+    @include xs{
+        margin-top: 60px;
+        width: 80%;
+    }
+
+    & .searchBar{
+        display: flex;
+        align-items: center;
+        background: white;
+        border: 1px solid rgba($color: #000000, $alpha: 0.5);
+    
+        & .searchBar__icon{
+            padding: 0 5px;
+        }
+
+        & .searchBar__item{
+            width: 100%;
+        }
+    }
+
+    & .searchContent{
+        width: 100%;
+        margin: 0 auto;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background-color: white;
+        z-index: 10;
+        
+        & .searchContent__item{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0;
+
+            position: relative;
+            overflow: auto;
+            z-index: 10;
+            max-height: 500px;
+
+            &::-webkit-scrollbar {
+                width: 5px;
+              }
+              
+            &::-webkit-scrollbar-thumb {
+                background: rgba($color: #000000, $alpha: 0.3); 
+                border-radius: 10px;
+              }
+
+            & .searchContent__item--container{
+                    width: 100%;
+                    position: relative;
+
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        top: 100%;
+                        left: 2.5%;
+                        width: 95%;
+                        height: 1px;
+                        background-color: rgba($color: #000000, $alpha: 0.1);
+                        
+                    }
+                & .searchContent__item--row{
+                    display: flex;
+                    align-items: center;
+                    padding: 10px;
+                    text-decoration: none;
+
+                    & .searchContent__item--img{
+                        margin-right: 20px;
+
+                        & img{
+                            width: 60px;
+                            height: 80px;
+                        }
+                    }
+
+                    & .searchContent__item--text{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        & p{
+                            margin: 0;
+                            color: $primary-color;
+                            font-weight: 600;
+                        }
+
+                        & span{
+                            font-size: 0.8rem;
+                            color: rgba($color: #000000, $alpha: 0.8);
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    & .searchContent__error{
+        width: 100%;
+        margin: 0 auto;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        z-index: 10;
+
+        & .searchContent__error--container{
+            width: 100%;
+
+            & .searchContent__error--img{
+                position: relative;
+                width: 100%;
+            }
+
+            & .searchContent__error--content{
+                position: absolute;
+                top: 10%;
+                right: 10%;
+                font-size: 1.5rem;
+                color: white;
+
+                @include xs{
+                    right: 5%;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
