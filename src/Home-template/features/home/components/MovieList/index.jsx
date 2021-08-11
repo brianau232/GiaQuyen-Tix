@@ -10,6 +10,12 @@ import { useSelector } from "react-redux";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import PageLoading from "../../../../../components/PageLoading";
+import {
+  CardActionArea,
+  CardContent,
+  CardMedia,
+  Typography,
+} from "@material-ui/core";
 
 function MovieList() {
   const dispatch = useDispatch();
@@ -60,6 +66,35 @@ function MovieList() {
     });
   };
 
+  const renderMovieMobile = () => {
+    const movie = movies?.slice(0, 10);
+    return movie?.map((item, index) => {
+      return (
+        <div className="movieListMobile__item">
+          <Link to={`/home/detail/${item.maPhim}`}>
+            <Card>
+              <CardActionArea>
+                <CardMedia image={item.hinhAnh} title="Contemplative Reptile" />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    {item.tenPhim}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    {`${item.moTa.substr(0, 40)}...`}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </Link>
+        </div>
+      );
+    });
+  };
+
   const settings = {
     dots: false,
     infinite: true,
@@ -104,6 +139,7 @@ function MovieList() {
         <>
           <p className="movieTitle">movie selection</p>
           <Slider {...settings}>{renderMovieList()}</Slider>
+          <div className="movieListMobile">{renderMovieMobile()}</div>
         </>
       )}
     </>

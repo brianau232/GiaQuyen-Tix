@@ -5,6 +5,12 @@
     background-color: none;
 }
 
+.slick-slider{
+  @include sm{
+    display: none !important;
+  }
+}
+
 .movieList{
   text-decoration: none !important;
 
@@ -22,11 +28,97 @@
   }
 }
 
+.movieListMobile{
+  display: none;
+  text-decoration: none !important;
+
+  & a{
+    text-decoration: none !important;
+  }
+
+  @include sm{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    & .movieListMobile__item{
+      margin: 0 10px;
+      width: 200px;
+
+      & .MuiCardMedia-root{
+        width: 100%;
+        height: 300px;
+      }
+    }
+
+    & .MuiCardContent-root{
+      padding: 10px 0;
+
+      & h2{
+        color: $primary-color;
+        font-size: 1.5rem;
+        margin: 0;
+        @include xs{
+          font-size: 0.9rem;
+        }
+      }
+
+      & p{
+        @include xs{
+          font-size: 0.6rem;
+        }
+      }
+      
+    }
+  }
+
+  @include xs{
+    width: 90%;
+
+    & .movieListMobile__item{
+      margin: 0 5px;
+      width: 160px;
+
+      & .MuiCardMedia-root{
+        width: 100%;
+        height: 250px;
+      }
+    }
+  }
+
+  @media (max-width:400px) {
+    & .movieListMobile__item{
+      margin: 0 5px;
+      width: 140px;
+
+      & .MuiCardMedia-root{
+        width: 100%;
+        height: 250px;
+      }
+    }
+  }
+  @media (max-width:350px) {
+    & .movieListMobile__item{
+      margin: 0 5px;
+      width: 120px;
+
+      & .MuiCardMedia-root{
+        width: 100%;
+        height: 200px;
+      }
+    }
+  }
+  
+}
+
 .movieTitle{
   text-align: center;
   text-transform: uppercase;
   font-size: 2.5rem;
   color: $primary-color;
+
   font-family: 'Style Script';
   font-weight: 600;
   margin-bottom: 0;
@@ -36,7 +128,7 @@
   }
 
   @include xs{
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin: 20px 0 5px;
   }
 }
